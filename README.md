@@ -2,6 +2,8 @@
 
 > Listas Genéricas 2026 — Sistema web de gestión académica
 
+- **Fecha de inicio del proyecto:** 10/05/2026 *(según historial de archivos)*
+
 ## 📌 Resumen del proyecto
 
 **Sistema de Calificaciones Académicas** (Listas Genéricas 2026) es un sistema web de gestión académica para instituciones de educación superior. Permite administrar registros de estudiantes con sus calificaciones (P1/P2 0–20, TP 0–10, Examen Final 0–50), con cálculos automáticos de totales y promedios, auditoría completa de operaciones CRUD, exportación a Excel/CSV y gráficos estadísticos.
