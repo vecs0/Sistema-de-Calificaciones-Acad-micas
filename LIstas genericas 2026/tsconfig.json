@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "lib": ["ES2015", "DOM"],
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "esModuleInterop": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "paths": {"*": ["./*"]}
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.aspx"],
+  "exclude": ["node_modules", "dist", "bin", "obj"]
+}

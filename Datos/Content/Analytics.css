@@ -1,0 +1,339 @@
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   SISTEMA DE CALIFICACIONES - ESTILOS DE ANALYTICS Y AUDITORÍA
+   archivo: Analytics.css
+   Complementa Calificaciones.css con estilos para gráficos y auditoría
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   LAYOUT MEJORADO - FORMULARIO Y COLUMNA DERECHA
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+.layout-grid-main {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   SECCIÓN DE GRÁFICOS Y ANALYTICS
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+.analytics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+  padding: 0;
+}
+
+.analytics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.analytics-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-light);
+}
+
+.analytics-card h4 {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.chart-card {
+  grid-row: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+}
+
+.chart-card canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.stats-card-tall {
+  min-height: 350px;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-item-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--amber);
+}
+
+.stat-item-inline .stat-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stat-value-small {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stat-value-small.good {
+  color: var(--green);
+}
+
+.stat-value-small.bad {
+  color: var(--red);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   TARJETA DE AUDITORÍA
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+.audit-card {
+  grid-column: 1 / -1;
+}
+
+.audit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.audit-header h4 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.btn-toggle-audit {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-toggle-audit:hover {
+  color: var(--amber);
+  transform: scale(1.1);
+}
+
+.btn-toggle-audit.collapsed {
+  transform: rotate(-180deg);
+}
+
+.audit-panel {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+.audit-panel.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 500px;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.audit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-tertiary);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.audit-item:hover {
+  background: var(--bg-quaternary);
+  border-left-color: var(--teal);
+}
+
+.audit-item.insert {
+  border-left-color: var(--green);
+}
+
+.audit-item.update {
+  border-left-color: var(--blue);
+}
+
+.audit-item.delete {
+  border-left-color: var(--red);
+}
+
+.audit-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.audit-item.insert .audit-icon {
+  background: var(--green);
+  color: #fff;
+}
+
+.audit-item.update .audit-icon {
+  background: var(--blue);
+  color: #fff;
+}
+
+.audit-item.delete .audit-icon {
+  background: var(--red);
+  color: #fff;
+}
+
+.audit-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.audit-time {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.audit-action {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.audit-detail {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.audit-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN MEJORADO
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1400px) {
+  .layout-grid-main {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout-grid-main {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card,
+  .stats-card-tall {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-grid-main {
+    gap: 16px;
+  }
+
+  .analytics-section {
+    gap: 16px;
+  }
+
+  .analytics-card {
+    padding: 16px;
+  }
+
+  .audit-item {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .stat-item-inline {
+    padding: 8px;
+  }
+
+  .stat-value-small {
+    font-size: 14px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   FIN DE ANALYTICS.CSS
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */

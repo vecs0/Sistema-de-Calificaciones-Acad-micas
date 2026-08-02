@@ -1,0 +1,41 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# C# files
+[*.cs]
+
+# IDE1006: Naming Conventions
+# Suppress warnings for event handler methods (btn*_Click pattern)
+dotnet_naming_rule.event_handlers_should_be_PascalCase.severity = silent
+dotnet_naming_rule.event_handlers_should_be_PascalCase.symbols = event_handler_symbols
+dotnet_naming_rule.event_handlers_should_be_PascalCase.style = pascal_case_style
+
+dotnet_naming_symbols.event_handler_symbols.applicable_kinds = method
+dotnet_naming_symbols.event_handler_symbols.applicable_accessibilities = private,protected,public
+dotnet_naming_symbols.event_handler_symbols.required_modifiers = 
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# All .NET naming rules
+[*.cs]
+
+# Style Definitions
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+# New line preferences
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+
+# Indentation preferences
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = flush_left
